@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Add Work Calendar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 min-h-screen flex items-start justify-center p-8">
+
+    <div class="bg-white rounded-lg shadow-md w-full max-w-7xl">
+        <!-- Header -->
+        <header class="flex justify-between items-center border-b border-gray-300 px-6 py-4">
+            <h2 class="text-xl font-semibold select-none">Add Work Calendar</h2>
+            <button id="closeBtn" aria-label="Close"
+                class="text-gray-600 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-blue-600 rounded">&times;</button>
+
+        </header>
+
+        <form id="calendarForm" class="p-6 space-y-6">
+
+            <!-- Half weekend toggle -->
+            <div>
+                <label class="inline-flex items-center space-x-2 cursor-pointer select-none">
+                    <input type="checkbox" id="halfWeekendToggle"
+                        class="form-checkbox text-blue-600 focus:ring-2 focus:ring-blue-400" />
+                    <span>Half working day &amp; half weekend</span>
+                </label>
+            </div>
+
+            <!-- Container for calendar tables -->
+            <div id="calendarTablesContainer" class="space-y-6">
+                <!-- Basic Calendar Table (default) -->
+                <section aria-label="Basic Work Calendar"
+                    class="bg-gray-50 rounded-lg p-4 border border-gray-200 shadow-sm overflow-x-auto">
+                    <table class="w-full table-fixed border-collapse text-gray-700">
+                        <thead>
+                            <tr class="text-center text-sm font-semibold text-gray-600 select-none">
+                                <th class="w-36 p-3 rounded-l-lg text-left"> </th>
+                                <th class="w-14 p-3">All</th>
+                                <th class="w-14 p-3">1st</th>
+                                <th class="w-14 p-3">2nd</th>
+                                <th class="w-14 p-3">3rd</th>
+                                <th class="w-14 p-3">4th</th>
+                                <th class="w-14 p-3 rounded-r-lg">5th</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Days -->
+                            <!-- Sunday -->
+                            <tr class="bg-white odd:bg-gray-50">
+                                <th scope="row" class="text-left font-normal p-3 select-none">Sunday</th>
+                                <td class="text-center p-3"><input type="checkbox" name="basic-sunday-all"
+                                        class="form-checkbox focus:ring-blue-400" /></td>
+                                <td class="text-center p-3"><input type="checkbox" name="basic-sunday-1st"
+                                        class="form-checkbox focus:ring-blue-400" /></td>
+                                <td class="text-center p-3"><input type="checkbox" name="basic-sunday-2nd"
+                                        class="form-checkbox focus:ring-blue-400" /></td>
+                                <td class="text-center p-3"><input type="checkbox" name="basic-sunday-3rd"
+                                        class="form-checkbox focus:ring-blue-400" /></td>
+                                <td class="text-center p-3"><input type="checkbox" name="basic-sunday-4th"
+                                        class="form-checkbox focus:ring-blue-400" /></td>
+                                <td class="text-center p-3"><input type="checkbox" name="basic-sunday-5th"
+                                        class="form-checkbox focus:ring-blue-400" /></td>
+                            </tr>
+                            <!-- Monday -->
+                            <tr class="bg-white odd:bg-gray-50">
+                                <th scope="row" class="text-left font-normal p-3 select-none">Monday</th>
+                                <td class="text-center p-3"><input type="checkbox" name="basic-monday-all"
+                                        class="form-checkbox focus:ring-blue-400" /></td>
+                                <td class="text-center p-3"><input type="checkbox" name="basic-monday-1st"
+                                        class="form-checkbox focus:ring-blue-400" /></td>
+                                <td class="text-center p-3"><input type="checkbox" name="basic-monday-2nd"
+                                        class="form-checkbox focus:ring-blue-400" /></td>
+                                <td class="text-center p-3"><input type="checkbox" name="basic-monday-3rd"
+                                        class="form-checkbox focus:ring-blue-400" /></td>
+                                <td class="text-center p-3"><input type="checkbox" name="basic-monday-4th"
+                                        class="form-checkbox focus:ring-blue-400" /></td>
+                                <td class="text-center p-3"><input type="checkbox" name="basic-monday-5th"
+                                        class="form-checkbox focus:ring-blue-400" /></td>
+                            </tr>
+                            <!-- Tuesday -->
+                            <tr class="bg-white odd:bg-gray-50">
+                                <th scope="row" class="text-left font-normal p-3 select-none">Tuesday</th>
+                                <td class="text-center p-3"><input type="checkbox" name="basic-tuesday-all"
+                                        class="form-checkbox focus:ring-blue-400" /></td>
+                                <td class="text-center p-3"><input type="checkbox" name="basic-tuesday-1st"
+                                        class="form-checkbox focus:ring-blue-400" /></td>
+                                <td class="text-center p-3"><input type="checkbox" name="basic-tuesday-2nd"
+                                        class="form-checkbox focus:ring-blue-400" /></td>
+                                <td class="text-center p-3"><input type="checkbox" name="basic-tuesday-3rd"
+                                        class="form-checkbox focus:ring-blue-400" /></td>
+                                <td class="text-center p-3"><input type="checkbox" name="basic-tuesday-4th"
+                                        class="form-checkbox focus:ring-blue-400" /></td>
+                                <td class="text-center p-3"><input type="checkbox" name="basic-tuesday-5th"
+                                        class="form-checkbox focus:ring-blue-400" /></td>
+                            </tr>
+                            <!-- Wednesday -->
+                            <tr class="bg-white odd:bg-gray-50">
+                                <th scope="row" class="text-left font-normal p-3 select-none">Wednesday</th>
+                                <td class="text-center p-3"><input type="checkbox" name="basic-wednesday-all"
+                                        class="form-checkbox focus:ring-blue-400" /></td>
+                                <td class="text-center p-3"><input type="checkbox" name="basic-wednesday-1st"
+                                        class="form-checkbox focus:ring-blue-400" /></td>
+                                <td class="text-center p-3"><input type="checkbox" name="basic-wednesday-2nd"
+                                        class="form-checkbox focus:ring-blue-400" /></td>
+                                <td class="text-center p-3"><input type="checkbox" name="basic-wednesday-3rd"
+                                        class="form-checkbox focus:ring-blue-400" /></td>
+                                <td class="text-center p-3"><input type="checkbox" name="basic-wednesday-4th"
+                                        class="form-checkbox focus:ring-blue-400" /></td>
+                                <td class="text-center p-3"><input type="checkbox" name="basic-wednesday-5th"
+                                        class="form-checkbox focus:ring-blue-400" /></td>
+                            </tr>
+                            <!-- Thursday -->
+                            <tr class="bg-white odd:bg-gray-50">
+                                <th scope="row" class="text-left font-normal p-3 select-none">Thursday</th>
+                                <td class="text-center p-3"><input type="checkbox" name="basic-thursday-all"
+                                        class="form-checkbox focus:ring-blue-400" /></td>
+                                <td class="text-center p-3"><input type="checkbox" name="basic-thursday-1st"
+                                        class="form-checkbox focus:ring-blue-400" /></td>
+                                <td class="text-center p-3"><input type="checkbox" name="basic-thursday-2nd"
+                                        class="form-checkbox focus:ring-blue-400" /></td>
+                                <td class="text-center p-3"><input type="checkbox" name="basic-thursday-3rd"
+                                        class="form-checkbox focus:ring-blue-400" /></td>
+                                <td class="text-center p-3"><input type="checkbox" name="basic-thursday-4th"
+                                        class="form-checkbox focus:ring-blue-400" /></td>
+                                <td class="text-center p-3"><input type="checkbox" name="basic-thursday-5th"
+                                        class="form-checkbox focus:ring-blue-400" /></td>
+                            </tr>
+                            <!-- Friday -->
+                            <tr class="bg-white odd:bg-gray-50">
+                                <th scope="row" class="text-left font-normal p-3 select-none rounded-bl-lg">Friday</th>
+                                <td class="text-center p-3"><input type="checkbox" name="basic-friday-all"
+                                        class="form-checkbox focus:ring-blue-400" /></td>
+                                <td class="text-center p-3"><input type="checkbox" name="basic-friday-1st"
+                                        class="form-checkbox focus:ring-blue-400" /></td>
+                                <td class="text-center p-3"><input type="checkbox" name="basic-friday-2nd"
+                                        class="form-checkbox focus:ring-blue-400" /></td>
+                                <td class="text-center p-3"><input type="checkbox" name="basic-friday-3rd"
+                                        class="form-checkbox focus:ring-blue-400" /></td>
+                                <td class="text-center p-3"><input type="checkbox" name="basic-friday-4th"
+                                        class="form-checkbox focus:ring-blue-400" /></td>
+                                <td class="text-center p-3 rounded-br-lg"><input type="checkbox" name="basic-friday-5th"
+                                        class="form-checkbox focus:ring-blue-400" /></td>
+                            </tr>
+                            <!-- Saturday -->
+                            <tr class="bg-white odd:bg-gray-50">
+                                <th scope="row" class="text-left font-normal p-3 select-none rounded-bl-lg">Saturday
+                                </th>
+                                <td class="text-center p-3"><input type="checkbox" name="basic-saturday-all"
+                                        class="form-checkbox focus:ring-blue-400" checked /></td>
+                                <td class="text-center p-3"><input type="checkbox" name="basic-saturday-1st"
+                                        class="form-checkbox focus:ring-blue-400" checked /></td>
+                                <td class="text-center p-3"><input type="checkbox" name="basic-saturday-2nd"
+                                        class="form-checkbox focus:ring-blue-400" checked /></td>
+                                <td class="text-center p-3"><input type="checkbox" name="basic-saturday-3rd"
+                                        class="form-checkbox focus:ring-blue-400" checked /></td>
+                                <td class="text-center p-3"><input type="checkbox" name="basic-saturday-4th"
+                                        class="form-checkbox focus:ring-blue-400" checked /></td>
+                                <td class="text-center p-3 rounded-br-lg"><input type="checkbox"
+                                        name="basic-saturday-5th" class="form-checkbox focus:ring-blue-400" checked />
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <!-- Detailed Table (shown when toggled) -->
+                <section id="detailedTable" aria-label="Half working day and half weekend calendar"
+                    class="hidden bg-white rounded-lg border border-gray-200 p-4 shadow-sm overflow-x-auto">
+                    <table class="w-full text-gray-700 text-sm table-fixed border-collapse">
+                        <thead>
+                            <tr class="bg-gray-50 font-semibold text-center select-none">
+                                <th class="w-36 p-3 rounded-l-lg text-left"> </th>
+                                <th class="w-14 p-3">All</th>
+                                <th class="w-28 p-3">1st</th>
+                                <th class="w-28 p-3">2nd</th>
+                                <th class="w-28 p-3">3rd</th>
+                                <th class="w-28 p-3">4th</th>
+                                <th class="w-28 p-3 rounded-r-lg">5th</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Days with checkboxes and dropdowns -->
+                            <template id="detailedRowTemplate">
+                                <tr class="bg-white odd:bg-gray-50">
+                                    <th scope="row" class="text-left font-normal p-3 select-none day-name"></th>
+
+                                    <td class="text-center p-3">
+                                        <input type="checkbox" class="form-checkbox focus:ring-blue-400 all-check" />
+                                    </td>
+
+                                    <!-- For each occurrence (1st, 2nd, 3rd, 4th, 5th) -->
+                                    <td class="text-center p-3 occurrence-cell">
+                                        <div class="flex items-center justify-center space-x-2">
+                                            <input type="checkbox"
+                                                class="form-checkbox focus:ring-blue-400 occurrence-check" />
+                                            <select
+                                                class="border border-gray-300 rounded px-2 py-1 text-xs focus:ring-blue-400 occurrence-select">
+                                                <option>Full Day</option>
+                                                <option>1st Half</option>
+                                                <option>2nd Half</option>
+                                            </select>
+                                        </div>
+                                    </td>
+
+                                    <td class="text-center p-3 occurrence-cell">
+                                        <div class="flex items-center justify-center space-x-2">
+                                            <input type="checkbox"
+                                                class="form-checkbox focus:ring-blue-400 occurrence-check" />
+                                            <select
+                                                class="border border-gray-300 rounded px-2 py-1 text-xs focus:ring-blue-400 occurrence-select">
+                                                <option>Full Day</option>
+                                                <option>1st Half</option>
+                                                <option>2nd Half</option>
+                                            </select>
+                                        </div>
+                                    </td>
+
+                                    <td class="text-center p-3 occurrence-cell">
+                                        <div class="flex items-center justify-center space-x-2">
+                                            <input type="checkbox"
+                                                class="form-checkbox focus:ring-blue-400 occurrence-check" />
+                                            <select
+                                                class="border border-gray-300 rounded px-2 py-1 text-xs focus:ring-blue-400 occurrence-select">
+                                                <option>Full Day</option>
+                                                <option>1st Half</option>
+                                                <option>2nd Half</option>
+                                            </select>
+                                        </div>
+                                    </td>
+
+                                    <td class="text-center p-3 occurrence-cell">
+                                        <div class="flex items-center justify-center space-x-2">
+                                            <input type="checkbox"
+                                                class="form-checkbox focus:ring-blue-400 occurrence-check" />
+                                            <select
+                                                class="border border-gray-300 rounded px-2 py-1 text-xs focus:ring-blue-400 occurrence-select">
+                                                <option>Full Day</option>
+                                                <option>1st Half</option>
+                                                <option>2nd Half</option>
+                                            </select>
+                                        </div>
+                                    </td>
+
+                                    <td class="text-center p-3 occurrence-cell">
+                                        <div class="flex items-center justify-center space-x-2">
+                                            <input type="checkbox"
+                                                class="form-checkbox focus:ring-blue-400 occurrence-check" />
+                                            <select
+                                                class="border border-gray-300 rounded px-2 py-1 text-xs focus:ring-blue-400 occurrence-select">
+                                                <option>Full Day</option>
+                                                <option>1st Half</option>
+                                                <option>2nd Half</option>
+                                            </select>
+                                        </div>
+                                    </td>
+
+                                </tr>
+                            </template>
+                        </tbody>
+                    </table>
+                </section>
+            </div>
+
+            <!-- Buttons -->
+            <div class="flex space-x-4">
+                <button type="submit"
+                    class="bg-blue-600 text-white px-5 py-2 rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">Save</button>
+                <button id="cancelBtn" type="button"
+                    class="border border-gray-300 px-5 py-2 rounded hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-300">Cancel</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        const halfWeekendToggle = document.getElementById('halfWeekendToggle');
+        const basicTable = document.querySelector('section[aria-label="Basic Work Calendar"]');
+        const detailedTableSection = document.getElementById('detailedTable');
+        const detailedTbody = detailedTableSection.querySelector('tbody');
+        const rowTemplate = document.getElementById('detailedRowTemplate');
+        const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+        // grab form and buttons (use ids for reliability)
+        const form = document.getElementById('calendarForm');
+        const cancelBtn = document.getElementById('cancelBtn');
+        const saveBtn = document.getElementById('saveBtn');
+
+        // Function to build detailed rows dynamically
+        function buildDetailedRows() {
+            detailedTbody.innerHTML = ''; // Clear existing rows
+            days.forEach(day => {
+                const clone = rowTemplate.content.cloneNode(true);
+                // Set day name
+                clone.querySelector('.day-name').textContent = day;
+
+                // Set ARIA labels for selects dynamically
+                clone.querySelectorAll('select').forEach((selectEl, idx) => {
+                    const occurrenceLabels = ["1st", "2nd", "3rd", "4th", "5th"];
+                    selectEl.setAttribute('aria-label', `${day} ${occurrenceLabels[idx]} occurrence work time`);
+                    selectEl.selectedIndex = 0; // default to Full Day
+                });
+
+                // Saturday row: check all checkboxes by default
+                if (day === "Saturday") {
+                    // Check "All"
+                    clone.querySelector('.all-check').checked = true;
+                    // Check all occurrences
+                    clone.querySelectorAll('.occurrence-check').forEach(chk => chk.checked = true);
+                }
+
+                detailedTbody.appendChild(clone);
+            });
+        }
+
+        // Initialize detailed table rows
+        buildDetailedRows();
+
+        // Toggle between basic and detailed calendars
+        halfWeekendToggle.addEventListener('change', () => {
+            if (halfWeekendToggle.checked) {
+                basicTable.classList.add('hidden');
+                detailedTableSection.classList.remove('hidden');
+            } else {
+                detailedTableSection.classList.add('hidden');
+                basicTable.classList.remove('hidden');
+            }
+        });
+
+        // Initialize page: show basic by default, detailed hidden
+        window.addEventListener('load', () => {
+            if (halfWeekendToggle.checked) {
+                basicTable.classList.add('hidden');
+                detailedTableSection.classList.remove('hidden');
+            } else {
+                detailedTableSection.classList.add('hidden');
+                basicTable.classList.remove('hidden');
+            }
+        });
+
+        // (Optional) keep the form reset event for other logic if you want
+        form.addEventListener('reset', () => {
+            // run after native reset so use timeout 0
+            setTimeout(() => {
+                halfWeekendToggle.checked = false;
+                basicTable.classList.remove('hidden');
+                detailedTableSection.classList.add('hidden');
+            }, 0);
+        });
+
+        // Reset form on cancel (explicit, reliable)
+        cancelBtn.addEventListener('click', (evt) => {
+            // Prevent any default (not strictly necessary for type="button")
+            evt.preventDefault();
+            // Reset the form fields
+            form.reset();
+            // Ensure detailed (half-weekend) view is hidden and basic table is shown
+            detailedTableSection.classList.add('hidden');
+            basicTable.classList.remove('hidden');
+            // Ensure the toggle is off
+            halfWeekendToggle.checked = false;
+        });
+
+        // Handle form submit
+        form.addEventListener('submit', (evt) => {
+            evt.preventDefault();
+            alert('Work calendar saved!');
+            // Implement real save logic as needed
+        });
+
+        // Close Button
+        const closeBtn = document.getElementById('closeBtn');
+        const calendarContainer = document.querySelector('.bg-white.rounded-lg.shadow-md');
+
+        closeBtn.addEventListener('click', () => {
+            calendarContainer.style.display = 'none';
+        });
+
+        // Basic table "All" checkboxes
+        basicTable.querySelectorAll('input[name$="-all"]').forEach(allChk => {
+            allChk.addEventListener('change', (evt) => {
+                const row = evt.target.closest('tr'); // get the row
+                const checkboxes = row.querySelectorAll('input[type="checkbox"]:not([name$="-all"])');
+                checkboxes.forEach(chk => chk.checked = evt.target.checked);
+            });
+        });
+
+        // Detailed table "All" checkboxes
+        detailedTbody.addEventListener('change', (evt) => {
+            const target = evt.target;
+            if (target.classList.contains('all-check')) {
+                const row = target.closest('tr');
+                // toggle all occurrence checkboxes
+                row.querySelectorAll('.occurrence-check').forEach(chk => chk.checked = target.checked);
+                // optional: if you want selects to reset when unchecked
+                if (!target.checked) {
+                    row.querySelectorAll('.occurrence-select').forEach(sel => sel.selectedIndex = 0);
+                }
+            }
+        });
+
+
+    </script>
+
+</body>
+
+</html>
